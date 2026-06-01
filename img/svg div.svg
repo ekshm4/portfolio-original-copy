@@ -1,0 +1,28 @@
+<svg
+            width="493"
+            height="516"
+            viewBox="0 0 493 516"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M24 0C10.7452 0 0 10.7452 0 24V492C0 505.255 10.7452 516 24 516H103C123.987 516 141 498.987 141 478V366C141 345.013 158.013 328 179 328H455C475.987 328 493 310.987 493 290V24C493 10.7452 482.255 0 469 0H24Z"
+              fill="url(#pattern0_10_16)"
+            />
+            <defs>
+              <pattern
+                id="pattern0_10_16"
+                patternContentUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <use
+                  xlink:href="#image0_10_16"
+                  transform="matrix(0.000462963 0 0 0.000442327 0 -0.0971415)"
+                />
+              </pattern>
+            </defs>
+          </svg>

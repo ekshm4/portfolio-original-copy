@@ -1,0 +1,56 @@
+.canvas-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 70px;
+  scroll-padding-bottom: 50px;
+}
+
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+[data-theme="dark"] .content::-webkit-scrollbar-track {
+  background: #222222;
+}
+
+[data-theme="dark"] .content::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
+.content {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #e0e0e0;
+}
+
+[data-theme="dark"] .content {
+  scrollbar-color: #ffffff #222222;
+}
+
+.content > section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  flex-shrink: 0;
+}

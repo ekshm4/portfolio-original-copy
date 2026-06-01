@@ -1,0 +1,191 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+
+a {
+    color: var(--text);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+}
+
+.navigation > .me {
+    display: flex;
+}
+
+.navigation > .me > h1 {
+    font-size: 40px;
+    font-family: "Goldman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text);
+}
+
+.navigation .me > .names {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    height: 43px;
+    font-family: "Goldman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text);
+}
+
+.navigation > .to_me {
+    font-family: 'Cascadia Mono', monospace;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    z-index: 1;
+    color: var(--text);
+}
+
+.navigation > .to_me > p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.navigation > .skills {
+    font-family: 'Cascadia Mono', monospace;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--text);
+}
+
+.navigation > .skills > li {
+    color: var(--text);
+}
+
+.navigation > .skills > li > a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.navigation > .skills > li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.nav-links > li {
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Cascadia Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.nav-links > li > a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-links > li:hover {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.mid-small-text {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 2rem;
+    font-size: 12px;
+    font-family: 'Cascadia Mono', monospace;
+    color: var(--text);
+}
+
+.down-text {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: start;
+    font-family: 'Cascadia Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.down-text > .left {
+    text-align: start;
+    width: 80px;
+}
+
+.down-text > .left:hover {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.down-text > .right:hover {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.mid-text {
+    position: absolute;
+    width: 30%;
+    height: 20vh;
+    top: 26%;
+    left: 87%;
+    transform: translate(-87%, -26%);
+}
+
+.mid-text > .i-am {
+    font-size: 40px;
+    font-family: "Goldman", sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    list-style: none;
+    color: var(--text);
+}
+
+.mid-text > .i-am > li:nth-child(2) {
+    font-size: 20px;
+    font-family: 'Cascadia Mono', monospace;
+}
+
+.big-mid-text2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    font-family: "Goldman", sans-serif;
+    z-index: 2;
+    -webkit-text-stroke: 1px var(--text);
+    color: transparent;
+}
