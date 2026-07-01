@@ -23,7 +23,7 @@ export default function Page5() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="contact-text">
-            Have a project in mind or just want to say hello?
+            Have a project in mind, a problem to solve, or just want to connect?
           </p>
 
           <div className="contact-links">
@@ -35,13 +35,13 @@ export default function Page5() {
               <span className="link-label">Phone</span>
               <span className="link-value">+250 791 387 381</span>
             </a>
-            <a href="#" className="contact-link">
+            <a href="https://github.com/ekshm4" target="_blank" rel="noopener noreferrer" className="contact-link">
               <span className="link-label">GitHub</span>
-              <span className="link-value">github.com/shimaebinezer</span>
+              <span className="link-value">github.com/ekshm4</span>
             </a>
-            <a href="#" className="contact-link">
+            <a href="https://linkedin.com/in/shima-kabare-ebinezer-92b71437b" target="_blank" rel="noopener noreferrer" className="contact-link">
               <span className="link-label">LinkedIn</span>
-              <span className="link-value">linkedin.com/in/shimaebinezer</span>
+              <span className="link-value">Shima Kabare Ebenezer</span>
             </a>
           </div>
         </motion.div>
@@ -53,7 +53,7 @@ export default function Page5() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          &copy; {new Date().getFullYear()} Shima Ebenezer Kabare
+          &copy; {new Date().getFullYear()} Shima Kabare Ebenezer
         </motion.p>
       </div>
     </section>

@@ -33,33 +33,44 @@
   box-shadow: 8px 8px 0 var(--text);
 }
 
-.project-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-bottom: 1px solid var(--text);
+.project-status {
+  font-family: 'Cascadia Mono', monospace;
+  font-size: 10px;
+  padding: 4px 8px;
+  border: 1px solid var(--text);
+  background: var(--bg);
+  color: var(--text);
+  white-space: nowrap;
 }
 
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
+.status-done {
+  opacity: 0.8;
 }
 
-.project-card:hover .project-image img {
-  transform: scale(1.05);
+.status-near {
+  border-style: dashed;
+}
+
+.status-wip {
+  border-style: dotted;
 }
 
 .project-info {
   padding: 20px;
 }
 
+.project-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 .project-name {
   font-family: "Goldman", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 8px;
   color: var(--text);
 }
 

@@ -3,38 +3,56 @@ import "./page4.css";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A full-stack application built with React and Node.js that solves real-world problems through clean architecture.",
-    tech: ["React", "Node.js", "PostgreSQL", "Docker"],
-    img: "img/DSC_0881.JPG",
+    title: "AgenticERP",
+    description: "AI-powered ERP assistant with a LangGraph agent that answers natural-language business questions. SSE streaming chat, real-time dashboard with KPI sparkline cards, and Odoo 17+ JSON-RPC integration.",
+    tech: ["Python", "LangGraph", "Gemini", "React 19", "TanStack", "FastAPI"],
+    status: "In Progress",
   },
   {
-    title: "Project Two",
-    description: "Backend microservices architecture handling distributed data processing and real-time analytics.",
-    tech: ["Python", "FastAPI", "Redis", "Kafka"],
-    img: "img/DSC_1053.JPG",
+    title: "GMC Kimihurura",
+    description: "Comprehensive church management platform for a real Kigali congregation. 7+ Prisma models, Docker multi-stage production build, Google Gemini AI integration, built over 14 months with 235 commits.",
+    tech: ["Next.js 16", "Prisma", "MySQL", "Docker", "Gemini AI", "GSAP"],
+    status: "Near-Finished",
   },
   {
-    title: "Project Three",
-    description: "Interactive 3D visualization tool leveraging WebGL and custom shaders for data exploration.",
-    tech: ["Three.js", "React", "WebGL", "GLSL"],
-    img: "img/DSC_0547.JPG",
+    title: "softPi",
+    description: "Dockerized dual-frontend CMS with Next.js marketing site and React admin dashboard. Real-time updates, media management, audit logging, and Nginx reverse proxy configuration.",
+    tech: ["Next.js", "Express", "Prisma", "Docker Compose", "Socket.IO", "Nginx"],
+    status: "Near-Finished",
+  },
+  {
+    title: "Chat General",
+    description: "Full-stack real-time AI chat with text-to-speech. OpenRouter-powered AI responses, Piper TTS audio generation, Socket.IO bidirectional messaging, and resizable terminal-styled UI.",
+    tech: ["React 19", "Socket.IO", "Express 5", "OpenRouter", "Piper TTS", "JWT"],
+    status: "Near-Finished",
+  },
+  {
+    title: "Kigali Smart Bus",
+    description: "Bus tracking prototype simulating 8 buses across 3 Kigali routes on an interactive Leaflet map with OSRM road-following, ETA calculations, and route filtering — all in a single 928-line HTML file.",
+    tech: ["React 18", "Leaflet", "OSRM", "OpenStreetMap", "Vanilla JS"],
+    status: "Complete",
+  },
+  {
+    title: "accessPc",
+    description: "Self-hosted media server (Plex-like) with HTTP Range streaming, recursive media scanning, music-metadata extraction, mobile-responsive UI, and JWT-authenticated multi-user support.",
+    tech: ["React 18", "Express 5", "Prisma", "MySQL", "HTTP Range", "Zod"],
+    status: "Near-Finished",
   },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 80 },
+  hidden: { opacity: 0, y: 60 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -64,13 +82,15 @@ export default function Page4() {
               key={project.title}
               className="project-card"
               variants={cardVariants}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -6 }}
             >
-              <div className="project-image">
-                <img src={project.img} alt={project.title} />
-              </div>
               <div className="project-info">
-                <h2 className="project-name">{project.title}</h2>
+                <div className="project-name-row">
+                  <h2 className="project-name">{project.title}</h2>
+                  <span className={`project-status ${project.status === 'Complete' ? 'status-done' : project.status === 'In Progress' ? 'status-wip' : 'status-near'}`}>
+                    {project.status}
+                  </span>
+                </div>
                 <p className="project-desc">{project.description}</p>
                 <div className="project-tech">
                   {project.tech.map((t) => (

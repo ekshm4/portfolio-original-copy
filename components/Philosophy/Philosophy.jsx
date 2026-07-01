@@ -3,16 +3,16 @@ import "./Philosophy.css";
 
 const philosophy = [
   {
-    title: "PRACTICAL OVER PERFECT",
-    text: "The best solution is the one that ships. I believe in building things that work in the real world, not just in ideal conditions. Every abstraction, every architecture decision — it has to justify itself by making the product better for the people using it.",
+    title: "AFRICA-FIRST INFRASTRUCTURE",
+    text: "I build for markets where infrastructure gaps are opportunities. From mobile money parsing to offline-first architecture, every tool I create is designed with the African context in mind — making enterprise-grade technology accessible to small and medium businesses across the continent.",
   },
   {
-    title: "UNDERSTAND FIRST, BUILD SECOND",
-    text: "Technology is a means, not an end. Before writing a single line of code, I invest time in understanding the problem, the people affected by it, and the context around it. The right solution emerges naturally when you deeply understand what needs solving.",
+    title: "AI THAT ACTUALLY HELPS",
+    text: "AI should be a tool, not a gimmick. I integrate LLMs into real workflows — ERP assistants that answer natural-language queries, chatbots that generate audio responses — always with the goal of reducing friction, not adding complexity. The technology should serve the people using it.",
   },
   {
-    title: "CLEAN CODE IS KINDNESS",
-    text: "Code is read far more often than it's written. Writing clean, maintainable code is a courtesy to your future self and everyone who comes after you. Simplicity is the ultimate sophistication — I strive to make the complex feel obvious.",
+    title: "SHIP, THEN PERFECT",
+    text: "The best solution is the one that reaches users. I believe in building practical, working systems that solve real problems today, then iterating based on feedback. Dockerised, deployed, and tested in production — not stuck in a theoretical design doc.",
   },
 ];
 

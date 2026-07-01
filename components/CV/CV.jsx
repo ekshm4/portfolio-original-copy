@@ -2,13 +2,21 @@ import { motion } from "framer-motion";
 import "./CV.css";
 
 const experience = [
-  { role: "Full-Stack Developer", company: "Freelance / Personal Projects", period: "2023 — Present" },
-  { role: "Backend Developer", company: "Various Projects", period: "2022 — Present" },
-  { role: "Creative Technologist", company: "Independent", period: "2021 — Present" },
+  { role: "Teleoperations Technician", company: "Verlet Robotics — Kigali, Rwanda", period: "April 2026 — Present" },
+  { role: "Full-Stack Engineer (Contract)", company: "AI Factory Dynamics — AgenticERP", period: "May 2026 — Present" },
+  { role: "Software Engineering Student", company: "African Leadership University", period: "2027 — 2029 (expected)" },
 ];
 
 const education = [
-  { degree: "Computer Science", school: "University", period: "Ongoing" },
+  { degree: "BSc Software Engineering", school: "African Leadership University, Kigali", period: "2027 — 2029 (expected)" },
+];
+
+const highlights = [
+  "Built a 10-tool LangGraph AI agent with SSE streaming for natural-language ERP queries",
+  "Delivered Dockerized CMS with Nginx reverse proxy, MySQL, and real-time updates via Socket.IO",
+  "Architected full church management platform over 14 months serving a real Kigali congregation",
+  "Integrated multiple LLM providers (Gemini, OpenRouter) with tool-calling architectures",
+  "Developed Kigali bus tracking simulation with Leaflet, OSRM routing, and real-time ETA calculations",
 ];
 
 export default function CV() {
@@ -35,7 +43,7 @@ export default function CV() {
           >
             <h2 className="cv-section-title">Experience</h2>
             {experience.map((exp) => (
-              <div key={exp.role} className="cv-entry">
+              <div key={exp.role + exp.company} className="cv-entry">
                 <h3 className="cv-entry-role">{exp.role}</h3>
                 <p className="cv-entry-company">{exp.company}</p>
                 <p className="cv-entry-period">{exp.period}</p>
@@ -60,6 +68,21 @@ export default function CV() {
             ))}
           </motion.div>
         </div>
+
+        <motion.div
+          className="cv-section cv-highlights"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h2 className="cv-section-title">Key Highlights</h2>
+          <ul className="cv-highlight-list">
+            {highlights.map((h) => (
+              <li key={h} className="cv-highlight-item">{h}</li>
+            ))}
+          </ul>
+        </motion.div>
 
         <motion.div
           className="cv-download"

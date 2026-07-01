@@ -17,10 +17,10 @@ export default function Page2() {
             <div className="text1">
               <h1>ABOUT ME</h1>
               <p>
-                I'm a full-stack developer who cares about how things work — not just the code, but the problem it solves and the people it serves. I've spent years building across the stack, from responsive frontends with React and Three.js to robust backends with Node.js, Python, and PostgreSQL.
+                I'm a self-taught full-stack engineer pursuing a BSc in Software Engineering at African Leadership University, while shipping production-grade applications across the stack. I build technology infrastructure to address structural problems in African markets — from AI-powered ERP assistants and real-time chat systems to Kigali public transit visualisation.
               </p>
               <p>
-                What drives me is the intersection of creative expression and practical engineering. I believe the best technology is invisible — it just works, and it makes life better for the people using it.
+                My work combines modern full-stack development with AI/LLM integration and DevOps. I currently work as a Teleoperations Technician at Verlet Robotics, gathering operational data through real-world field operations. Every project I build solves a real problem, many with an Africa-first lens.
               </p>
             </div>
           </motion.div>
@@ -33,9 +33,9 @@ export default function Page2() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="text1 no-3d">
-              <h1>OUR MISSION</h1>
+              <h1>THE MISSION</h1>
               <p>
-                Pay attention to the problems people actually deal with — the small frustrations, daily inefficiencies, moments where a system fails the person it was supposed to serve — and build practical solutions that genuinely help. Not flashy tools for the sake of innovation, but real ones that make a difference.
+                Pay attention to the problems people actually deal with — the small frustrations, daily inefficiencies, moments where a system fails the person it was supposed to serve — and build practical solutions that genuinely help. Not flashy tools for the sake of innovation, but real ones that make a difference in how people move through their day. When you understand people first, the technology follows naturally.
               </p>
             </div>
           </motion.div>

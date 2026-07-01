@@ -8,8 +8,6 @@ export default function Page1 () {
   return (
     <section id="home">
       <div className="container">
-       
-
         <div className="mid-small-text">
           <p>xx</p>
           <p>xx</p>
@@ -29,11 +27,6 @@ export default function Page1 () {
         </motion.div>
 
 
-
-        <div className="down-text">
-          <p className="right" onClick={toggleTheme}>Dark mode.</p>
-          <p className="left">Anything you prefer.</p>
-        </div>
       </div>
     </section>
   );

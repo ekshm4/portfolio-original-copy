@@ -4,22 +4,30 @@ import "./page3.css";
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React", "Three.js", "JavaScript", "HTML/CSS", "Framer Motion", "Vite"],
+    skills: ["React 18/19", "Next.js", "TypeScript", "TanStack", "Tailwind CSS", "Framer Motion", "GSAP", "Three.js", "Leaflet"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL", "Redis"],
+    skills: ["Node.js", "Express", "FastAPI", "Python", "REST APIs", "WebSockets", "SSE Streaming", "JWT/OAuth"],
   },
   {
-    title: "Tools & DevOps",
-    skills: ["Docker", "Git", "Linux", "CI/CD", "Nginx", "Cloud"],
+    title: "Databases & DevOps",
+    skills: ["Prisma ORM", "MySQL", "PostgreSQL", "Docker", "Docker Compose", "Nginx", "Linux", "Git"],
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: ["LangGraph", "LangChain", "Gemini 2.5 Flash", "OpenRouter", "Piper TTS", "LLM Tool-Calling"],
+  },
+  {
+    title: "ERP & Integrations",
+    skills: ["Odoo 17+ JSON-RPC", "Cloudinary", "Socket.IO", "HTTP Range Streaming", "Stripe (conceptual)"],
   },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
