@@ -11,15 +11,25 @@ import Page4 from "../components/page4/page4.jsx";
 import CV from "../components/CV/CV";
 import Page5 from "../components/page5/page5.jsx";
 import Cursor from "../components/Cursor/cursor.jsx";
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import { useTheme } from "./ThemeContext";
 
-const sectionImages = {
-  home: 'img/cat.jpg',
-  mission: 'img/Me.jpeg',
-  philosophy: 'img/edit.jpg',
-  skills: 'img/DSC_1050.JPG',
-  cv: 'img/CSC_1146.JPG',
-  contact: 'img/DSC_0881.JPG',
+const sectionImages = [
+  'img/cat.jpg',
+  'img/Me.jpeg',
+  'img/edit.jpg',
+  'img/DSC_1050.JPG',
+  'img/CSC_1146.JPG',
+  'img/DSC_0881.JPG',
+];
+
+const sectionImageMap = {
+  home: sectionImages[0],
+  mission: sectionImages[1],
+  philosophy: sectionImages[2],
+  skills: sectionImages[3],
+  cv: sectionImages[4],
+  contact: sectionImages[5],
 };
 
 const sectionIds = ['home', 'mission', 'philosophy', 'skills', 'projects', 'cv', 'contact'];
@@ -28,7 +38,38 @@ function App() {
   const { setOverrideTheme } = useTheme();
   const contentRef = useRef(null);
   const [meshHidden, setMeshHidden] = useState(false);
-  const [activeImage, setActiveImage] = useState('img/cat.jpg');
+  const [activeImage, setActiveImage] = useState(sectionImages[0]);
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    let loaded = 0;
+    const total = sectionImages.length;
+
+    sectionImages.forEach((src) => {
+      const img = new Image();
+      img.onload = () => {
+        if (cancelled) return;
+        loaded++;
+        setProgress((loaded / total) * 100);
+        if (loaded >= total) {
+          setTimeout(() => setLoading(false), 400);
+        }
+      };
+      img.onerror = () => {
+        if (cancelled) return;
+        loaded++;
+        setProgress((loaded / total) * 100);
+        if (loaded >= total) {
+          setTimeout(() => setLoading(false), 400);
+        }
+      };
+      img.src = src;
+    });
+
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     const el = contentRef.current;
@@ -46,8 +87,9 @@ function App() {
         setMeshHidden(false);
       }
 
-      if (sectionImages[activeId] && activeImage !== sectionImages[activeId]) {
-        setActiveImage(sectionImages[activeId]);
+      const imgSrc = sectionImageMap[activeId];
+      if (imgSrc && activeImage !== imgSrc) {
+        setActiveImage(imgSrc);
       }
     };
 
@@ -58,6 +100,7 @@ function App() {
 
   return (
     <>
+      <LoadingScreen progress={progress} visible={loading} />
       <div className="canvas-wrapper">
         <Scene meshHidden={meshHidden} imagePath={activeImage} />
       </div>
