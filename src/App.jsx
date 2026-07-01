@@ -17,10 +17,10 @@ import { useTheme } from "./ThemeContext";
 const sectionImages = [
   'img/cat.jpg',
   'img/Me.jpeg',
-  'img/edit.jpg',
-  'img/DSC_1050.JPG',
-  'img/CSC_1146.JPG',
-  'img/DSC_0881.JPG',
+  'img/byron-breytenbach-FNhCeH1eBAA-unsplash.jpg',
+  'img/justin-veenema-gf03H-I7C9Y-unsplash.jpg',
+  'img/nathan-dumlao-zi5vRoAP3WY-unsplash.jpg',
+  'img/olena-bohovyk-DmeZC9riGkk-unsplash.jpg',
 ];
 
 const sectionImageMap = {
