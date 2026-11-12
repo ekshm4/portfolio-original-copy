@@ -51,7 +51,8 @@
   }
 
   .philosophy-title {
-    font-size: 40px;
+    font-size: clamp(28px, 7.5vw, 40px);
+    overflow-wrap: anywhere;
   }
 
   .philosophy-list {

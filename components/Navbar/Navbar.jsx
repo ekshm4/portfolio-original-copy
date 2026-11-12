@@ -15,20 +15,22 @@ export default function Navbar() {
           </div>
         </div>
         <div className="nav-center">
-          <p>available for Talk.</p>
+          <p>Let&apos;s build something useful.</p>
           <p>Shimaebinezer@gmail.com</p>
           <p>+250791387381.</p>
         </div>
         <button
           className={`hamburger ${menuOpen ? 'open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          aria-controls="portfolio-navigation"
         >
           <span />
           <span />
           <span />
         </button>
-        <div className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`}>
+        <div id="portfolio-navigation" className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`}>
           <ul className="nav-list-left">
             <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a>.</li>
             <li><a href="#mission" onClick={() => setMenuOpen(false)}>Mission</a>.</li>

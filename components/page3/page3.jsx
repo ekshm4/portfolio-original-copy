@@ -1,28 +1,7 @@
 import { motion } from "framer-motion";
 import "./page3.css";
 
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: ["React 18/19", "Next.js", "TypeScript", "TanStack", "Tailwind CSS", "Framer Motion", "GSAP", "Three.js", "Leaflet"],
-  },
-  {
-    title: "Backend",
-    skills: ["Node.js", "Express", "FastAPI", "Python", "REST APIs", "WebSockets", "SSE Streaming", "JWT/OAuth"],
-  },
-  {
-    title: "Databases & DevOps",
-    skills: ["Prisma ORM", "MySQL", "PostgreSQL", "Docker", "Docker Compose", "Nginx", "Linux", "Git"],
-  },
-  {
-    title: "AI & Machine Learning",
-    skills: ["LangGraph", "LangChain", "Gemini 2.5 Flash", "OpenRouter", "Piper TTS", "LLM Tool-Calling"],
-  },
-  {
-    title: "ERP & Integrations",
-    skills: ["Odoo 17+ JSON-RPC", "Cloudinary", "Socket.IO", "HTTP Range Streaming", "Stripe (conceptual)"],
-  },
-];
+import { skillCategories } from "../../src/data/portfolio";
 
 const containerVariants = {
   hidden: {},
@@ -77,6 +56,7 @@ export default function Page3() {
               variants={categoryVariants}
             >
               <h2 className="category-title">{category.title}</h2>
+              <p className="category-note">{category.note}</p>
               <div className="skill-list">
                 {category.skills.map((skill) => (
                   <motion.span

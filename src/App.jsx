@@ -15,7 +15,7 @@ import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import { useTheme } from "./ThemeContext";
 
 const sectionImages = [
-  'img/cat.jpg',
+  'img/profile-scene.png',
   'img/Me.jpeg',
   'img/byron-breytenbach-FNhCeH1eBAA-unsplash.jpg',
   'img/justin-veenema-gf03H-I7C9Y-unsplash.jpg',
@@ -76,8 +76,14 @@ function App() {
     if (!el) return;
 
     const handleScroll = () => {
-      const idx = Math.round(el.scrollTop / window.innerHeight);
-      const activeId = sectionIds[idx] || 'home';
+      // Sections can exceed a viewport on mobile and when content grows.
+      const activationPoint = el.scrollTop + el.clientHeight * 0.35;
+      let activeId = 'home';
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section && section.offsetTop <= activationPoint) activeId = id;
+      });
+      document.documentElement.dataset.section = activeId;
 
       if (activeId === 'projects') {
         setOverrideTheme('blue');
@@ -88,15 +94,19 @@ function App() {
       }
 
       const imgSrc = sectionImageMap[activeId];
-      if (imgSrc && activeImage !== imgSrc) {
+      if (imgSrc) {
         setActiveImage(imgSrc);
       }
     };
 
-    el.addEventListener('scroll', handleScroll);
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
     handleScroll();
-    return () => el.removeEventListener('scroll', handleScroll);
-  }, [setOverrideTheme, activeImage]);
+    return () => {
+      el.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [setOverrideTheme]);
 
   return (
     <>
@@ -104,8 +114,9 @@ function App() {
       <div className="canvas-wrapper">
         <Scene meshHidden={meshHidden} imagePath={activeImage} />
       </div>
+      <a className="skip-link" href="#projects">Skip to selected work</a>
       <Navbar />
-      <div className="content" ref={contentRef}>
+      <main className="content" ref={contentRef} aria-label="Portfolio sections">
         <Page1 />
         <Page2 />
         <Philosophy />
@@ -113,7 +124,7 @@ function App() {
         <Page4 />
         <CV />
         <Page5 />
-      </div>
+      </main>
       <BottomBar />
       <Cursor />
     </>

@@ -1,23 +1,9 @@
 import { motion } from "framer-motion";
 import "./CV.css";
 
-const experience = [
-  { role: "Teleoperations Technician", company: "Verlet Robotics — Kigali, Rwanda", period: "April 2026 — Present" },
-  { role: "Full-Stack Engineer (Contract)", company: "AI Factory Dynamics — AgenticERP", period: "May 2026 — Present" },
-  { role: "Software Engineering Student", company: "African Leadership University", period: "2027 — 2029 (expected)" },
-];
+import cv from "../../src/data/cv.json";
 
-const education = [
-  { degree: "BSc Software Engineering", school: "African Leadership University, Kigali", period: "2027 — 2029 (expected)" },
-];
-
-const highlights = [
-  "Built a 10-tool LangGraph AI agent with SSE streaming for natural-language ERP queries",
-  "Delivered Dockerized CMS with Nginx reverse proxy, MySQL, and real-time updates via Socket.IO",
-  "Architected full church management platform over 14 months serving a real Kigali congregation",
-  "Integrated multiple LLM providers (Gemini, OpenRouter) with tool-calling architectures",
-  "Developed Kigali bus tracking simulation with Leaflet, OSRM routing, and real-time ETA calculations",
-];
+const { experience, education, highlights } = cv;
 
 export default function CV() {
   return (

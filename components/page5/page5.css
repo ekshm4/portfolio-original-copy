@@ -22,6 +22,8 @@
 
 .contact-content {
   max-width: 600px;
+  width: 100%;
+  min-width: 0;
 }
 
 .contact-text {
@@ -63,6 +65,7 @@
 .link-value {
   font-size: 14px;
   font-family: 'Cascadia Mono', monospace;
+  overflow-wrap: anywhere;
 }
 
 .contact-footer {

@@ -19,7 +19,7 @@ a {
     align-items: start;
     justify-content: space-between;
     background-color: transparent;
-    padding: 2rem;
+    padding: 120px 32px 24px;
     font-size: 12px;
     font-family: 'Cascadia Mono', monospace;
     color: var(--text);
@@ -56,11 +56,25 @@ a {
 
 .mid-text {
     position: absolute;
-    width: 30%;
-    height: 20vh;
-    top: 26%;
-    left: 87%;
-    transform: translate(-87%, -26%);
+    width: min(44%, 620px);
+    top: 35%;
+    right: 6%;
+}
+
+.hero-eyebrow { font-size: 12px; letter-spacing: 0.1em; margin-bottom: 20px; }
+.hero-heading { font-family: "Goldman", sans-serif; font-size: clamp(34px, 4.3vw, 68px); font-weight: 400; line-height: 1.12; letter-spacing: -0.04em; }
+.hero-description { font-size: 14px; line-height: 1.8; max-width: 450px; margin-top: 24px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.hero-action { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; padding: 13px 16px; border: 1px solid var(--text); text-decoration: none; font-size: 12px; background: var(--text); color: var(--bg); }
+.hero-action-secondary { color: var(--text); background: var(--bg); }
+.hero-action:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 768px) {
+  .container { height: auto; min-height: 100svh; justify-content: flex-start; padding-bottom: 90px; }
+  .mid-small-text { padding: 110px 24px 20px; font-size: 10px; gap: 20px; }
+  .mid-text { position: relative; width: auto; left: auto; right: auto; top: auto; margin: clamp(32px, 7vh, 80px) 24px 0; padding: 24px; background: color-mix(in srgb, var(--bg) 95%, transparent); border: 1px solid var(--text); }
+  .hero-heading { font-size: clamp(32px, 8vw, 52px); }
+  .hero-description { font-size: 12px; }
 }
 
 .mid-text > .i-am {

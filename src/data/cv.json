@@ -1,0 +1,41 @@
+{
+  "name": "Shima Kabare Ebenezer",
+  "title": "Full-Stack Developer | Kigali, Rwanda",
+  "email": "Shimaebinezer@gmail.com",
+  "phone": "+250 791 387 381",
+  "website": "https://shima-kabare-ebenezer.vercel.app/",
+  "github": "https://github.com/ekshm4",
+  "summary": "Full-stack developer building web applications, real-time tools, and interactive experiences. Software Engineering student at African Leadership University, 2026-2029.",
+  "experience": [
+    {
+      "role": "Teleoperations Technician",
+      "company": "Verlet Robotics - Kigali, Rwanda",
+      "period": "April 2026 - Present"
+    },
+    {
+      "role": "Full-Stack Engineer (Contract)",
+      "company": "AI Factory Dynamics - AgenticERP",
+      "period": "May 2026 - Present"
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Software Engineering",
+      "school": "African Leadership University, Kigali",
+      "period": "2026 - 2029 (expected)"
+    }
+  ],
+  "highlights": [
+    "Build React and Next.js interfaces with JavaScript, TypeScript, and reusable component systems",
+    "Develop Express APIs with authentication, MySQL persistence, and Prisma data models",
+    "Connect applications with Socket.IO, media streaming, and AI provider APIs",
+    "Package applications with Docker, Docker Compose, and Nginx",
+    "Explore Kigali transit through a frontend map prototype with simulated vehicle positions and ETAs"
+  ],
+  "skills": [
+    "React, Next.js, JavaScript, TypeScript, Tailwind CSS, Vite",
+    "Node.js, Express, REST APIs, Socket.IO, JWT, MySQL, Prisma",
+    "Docker, Docker Compose, Nginx, Linux, Git, Vercel",
+    "Three.js, React Three Fiber, GSAP, Framer Motion, Leaflet"
+  ]
+}

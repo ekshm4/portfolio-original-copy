@@ -3,8 +3,10 @@ import { useRef, useEffect } from "react";
 import * as THREE from 'three';
 import { fragment, vertex } from "./shader";
 import { useFrame } from "@react-three/fiber";
+import { useReducedMotion } from "framer-motion";
 
 export default function Model ({ imagePath }) { // eslint-disable-line react/prop-types
+    const reducedMotion = useReducedMotion();
     const meshRef = useRef();
     const mouse = useRef({ x: 0, y: 0 });
     const transition = useRef(1);
@@ -67,15 +69,26 @@ export default function Model ({ imagePath }) { // eslint-disable-line react/pro
         const maxScroll = contentEl ? Math.max(contentEl.scrollHeight - contentEl.clientHeight, 1) : 1;
         const progress = scrollY / maxScroll;
 
-        const targetX = Math.pow(progress, 0.4) * 3.5;
+        const onHome = document.documentElement.dataset.section === 'home';
+        const targetX = onHome
+            ? (window.innerWidth > 768 ? -2.5 : 0)
+            : Math.pow(progress, 0.4) * 3.5;
 
-        if (meshRef.current) {
-            meshRef.current.position.x += (targetX - meshRef.current.position.x) * 0.05;
-            meshRef.current.rotation.x = mouse.current.y * Math.PI / 10;
-            meshRef.current.rotation.y = mouse.current.x * Math.PI / 10;
+        if (reducedMotion) {
+            transition.current = 1;
+            uniforms.current.uTransition.value = 1;
+            uniforms.current.uTexture.value = uniforms.current.uTexture2.value;
         }
 
-        uniforms.current.uTime.value += random;
+        if (meshRef.current) {
+            meshRef.current.position.x = reducedMotion
+                ? targetX
+                : meshRef.current.position.x + (targetX - meshRef.current.position.x) * 0.05;
+            meshRef.current.rotation.x = reducedMotion ? 0 : mouse.current.y * Math.PI / 10;
+            meshRef.current.rotation.y = reducedMotion ? 0 : mouse.current.x * Math.PI / 10;
+        }
+
+        if (!reducedMotion) uniforms.current.uTime.value += random;
     });
 
     return (

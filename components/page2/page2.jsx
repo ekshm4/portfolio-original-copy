@@ -17,10 +17,10 @@ export default function Page2() {
             <div className="text1">
               <h1>ABOUT ME</h1>
               <p>
-                I'm a self-taught full-stack engineer pursuing a BSc in Software Engineering at African Leadership University, while shipping production-grade applications across the stack. I build technology infrastructure to address structural problems in African markets — from AI-powered ERP assistants and real-time chat systems to Kigali public transit visualisation.
+                I'm Shima Kabare Ebenezer, a full-stack developer based in Kigali, Rwanda, and a Software Engineering student at African Leadership University (2026–2029). I work across React and Next.js interfaces, Node.js APIs, real-time applications, and interactive visual experiences.
               </p>
               <p>
-                My work combines modern full-stack development with AI/LLM integration and DevOps. I currently work as a Teleoperations Technician at Verlet Robotics, gathering operational data through real-world field operations. Every project I build solves a real problem, many with an Africa-first lens.
+                My projects range from self-hosted media tools and content management systems to map-based transit prototypes and AI integrations. I also work as a Teleoperations Technician at Verlet Robotics. I care about how a system behaves in practice: how it communicates, where it fails, and whether people can actually use it.
               </p>
             </div>
           </motion.div>
@@ -35,7 +35,7 @@ export default function Page2() {
             <div className="text1 no-3d">
               <h1>THE MISSION</h1>
               <p>
-                Pay attention to the problems people actually deal with — the small frustrations, daily inefficiencies, moments where a system fails the person it was supposed to serve — and build practical solutions that genuinely help. Not flashy tools for the sake of innovation, but real ones that make a difference in how people move through their day. When you understand people first, the technology follows naturally.
+                Pay attention to the problems people deal with every day, understand the constraints, and build something useful. I want to make software that is clear to use, maintainable, and grounded in the communities it serves.
               </p>
             </div>
           </motion.div>
