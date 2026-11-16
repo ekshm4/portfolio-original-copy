@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 100px 80px;
   position: relative;
   z-index: 1;
@@ -38,6 +38,30 @@
 .project-links a:hover { text-decoration-thickness: 2px; }
 .project-tech { margin-bottom: 8px; }
 .status-prototype { border-style: dashed; }
+
+.project-controls { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 24px; margin-bottom: 18px; }
+.project-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.project-filters button, .projects-more { border: 1px solid var(--text); background: transparent; color: var(--text); font: inherit; font-size: 12px; padding: 12px 14px; cursor: pointer; }
+.project-filters button[aria-pressed="true"], .projects-more:hover { background: var(--text); color: var(--bg); }
+.project-filters button span { font-size: 10px; }
+.project-search { display: flex; flex-direction: column; gap: 8px; font-size: 11px; min-width: 240px; }
+.project-search input { width: 100%; padding: 12px; font: inherit; font-size: 12px; color: var(--text); background: transparent; border: 1px solid var(--text); border-radius: 0; }
+.project-search input::placeholder { color: var(--text); opacity: 0.7; }
+.project-count { font-size: 11px; margin-bottom: 24px; }
+.project-next { font-size: 11px; line-height: 1.7; margin-bottom: 18px; }
+.project-next span { font-weight: bold; }
+.projects-more { align-self: center; margin-top: 32px; position: relative; z-index: 1; scroll-margin-block: 160px; }
+
+/* Keep native section snapping and the transparent fixed footer from taking
+   control away from the catalog while its results change or expand. */
+[data-section="projects"] .content { scroll-snap-type: none; }
+[data-section="projects"] .bottombar { pointer-events: none; }
+[data-section="projects"] .bottombar > * { pointer-events: auto; }
+
+@media (max-width: 768px) {
+  .project-controls, .project-search { width: 100%; min-width: 0; }
+  .project-filters button { font-size: 11px; padding: 10px; }
+}
 
 @media (min-width: 769px) and (max-width: 1100px) {
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }

@@ -15,7 +15,7 @@ import LoadingScreen from "../components/LoadingScreen/LoadingScreen";
 import { useTheme } from "./ThemeContext";
 
 const sectionImages = [
-  'img/profile-scene.png',
+  'img/cat.jpg',
   'img/Me.jpeg',
   'img/byron-breytenbach-FNhCeH1eBAA-unsplash.jpg',
   'img/justin-veenema-gf03H-I7C9Y-unsplash.jpg',

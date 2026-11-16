@@ -6,7 +6,8 @@
 - Public project descriptions and links: `src/data/portfolio.js`.
 - Shared experience and education: `src/data/cv.json`, used by the page and downloadable CV generator.
 - Prototype projects retain their labels. Transit positions and ETAs are simulated.
-- Private repository names and contents are excluded from public project links.
+- Private projects may appear as owner-approved summaries with implementation-stage labels. Raw reports, source code, operational details, and private repository URLs are excluded.
+- Reports do not supply overall completion percentages. Do not invent them or equate a source-file count with completion.
 
 ## Ongoing improvements
 

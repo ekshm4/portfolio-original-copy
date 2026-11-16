@@ -1,3 +1,5 @@
+import { privateProjects } from "./privateProjects";
+
 export const links = {
   github: "https://github.com/ekshm4",
   portfolio: "https://shima-kabare-ebenezer.vercel.app/",
@@ -40,7 +42,7 @@ export const skillCategories = [
   },
 ];
 
-export const projects = [
+export const publicProjects = [
   {
     title: "AccessPC",
     category: "Full-stack / self-hosted",
@@ -97,4 +99,9 @@ export const projects = [
     kind: "source",
     source: "https://github.com/ekshm4/softpi-website",
   },
+];
+
+export const projects = [
+  ...publicProjects.map((project) => ({ ...project, visibility: "public" })),
+  ...privateProjects,
 ];

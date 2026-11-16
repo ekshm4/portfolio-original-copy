@@ -53,9 +53,10 @@ export default function Model ({ imagePath }) { // eslint-disable-line react/pro
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
-    const random = 0.09 + Math.random() * 0.11;
+    // Radians per second: one gentle wave cycle takes about 42 seconds.
+    const waveSpeed = 0.15;
 
-    useFrame(() => {
+    useFrame((_, delta) => {
         if (transition.current < 1) {
             transition.current += 0.02;
             uniforms.current.uTransition.value = Math.min(transition.current, 1);
@@ -69,10 +70,7 @@ export default function Model ({ imagePath }) { // eslint-disable-line react/pro
         const maxScroll = contentEl ? Math.max(contentEl.scrollHeight - contentEl.clientHeight, 1) : 1;
         const progress = scrollY / maxScroll;
 
-        const onHome = document.documentElement.dataset.section === 'home';
-        const targetX = onHome
-            ? (window.innerWidth > 768 ? -2.5 : 0)
-            : Math.pow(progress, 0.4) * 3.5;
+        const targetX = Math.pow(progress, 0.4) * 3.5;
 
         if (reducedMotion) {
             transition.current = 1;
@@ -88,7 +86,9 @@ export default function Model ({ imagePath }) { // eslint-disable-line react/pro
             meshRef.current.rotation.y = reducedMotion ? 0 : mouse.current.x * Math.PI / 10;
         }
 
-        if (!reducedMotion) uniforms.current.uTime.value += random;
+        if (!reducedMotion) {
+            uniforms.current.uTime.value += Math.min(delta, 0.1) * waveSpeed;
+        }
     });
 
     return (
